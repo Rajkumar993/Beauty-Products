@@ -67,7 +67,7 @@ if(cartData){
 
     if (cookieValue) {
       Cookies.set("ualum", decodeURIComponent(cookieValue));
-      dispatch(login({ userId: parseInt(cookieValue) })); // Assuming userId is extracted from cookieValue
+      dispatch(login({ userId: parseInt(cookieValue) })); // userId is extracted from cookieValue
       window.location.href = HOST;
     }
   }, [dispatch]);
