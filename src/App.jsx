@@ -8,6 +8,7 @@ import { Cart } from './components/cart/Cart'
 import { SingleProduct } from './components/Products/SingleProduct'
 import { WhishList } from './components/wishList/WhishList'
 import Footer from './components/footer/Footer'
+import { Blog2 } from './components/Blog/Blog2'
 function App() {
   const ScrollRef=useRef(null)
 const BlogRef=useRef(null)
@@ -27,6 +28,7 @@ const BlogRef=useRef(null)
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/products/:id' element={<SingleProduct/>}/>
       <Route path='/wishlist' element={<WhishList/>}/>
+      <Route path='/blog/:id' element={<Blog2/>}/>
     </Routes>
   <Footer/>
     </BrowserRouter>

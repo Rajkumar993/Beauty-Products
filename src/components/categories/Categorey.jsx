@@ -1,6 +1,23 @@
-import React from 'react'
+import { useQuery } from '@apollo/client';
+import React, { useEffect, useState } from 'react'
 import { IoIosArrowBack } from "react-icons/io";
-export const Categorey = ({setArr,arr,Headphn,Computers,Pendrive,All,Moniter,Printer,Adapter,Temperglass,PowerBank,Airpods}) => {
+import { GET_CATEGORIES } from '../../apollo/Apollo';
+export const Categorey = ({All,setArr,setCate}) => {
+  const [categorie,setCategorie]=useState([])
+  const{data,loading,error}=useQuery(GET_CATEGORIES,{
+    variables:{
+      filter:{
+        shopId:347,
+        status:1
+      }
+    }
+  })
+  useEffect(()=>{
+ if(data){
+ setCategorie(data.categories)
+ }
+  },[data])
+
   return (
     <div className='flex justify-center items-center  py-5'>
       <div className=' flex flex-col pb-10 relative  bg-gray-200 '>
@@ -9,19 +26,14 @@ export const Categorey = ({setArr,arr,Headphn,Computers,Pendrive,All,Moniter,Pri
       </div>
       <div className='flex justify-center'>
         <ul className='flex flex-col list-disc cursor-pointer'>
-          <li className='hover:text-green-500' onClick={()=>{
+        <li className='hover:text-green-500' onClick={()=>{
             All()
            
             }}>ALL</li>
-          <li className='hover:text-green-500' onClick={Headphn}>HEAD PHONES</li>
-          <li className='hover:text-green-500'onClick={Moniter}>MONITER</li>
-          <li className='hover:text-green-500'onClick={Adapter}>ADAPTER</li>
-          <li className='hover:text-green-500'onClick={Temperglass}>TEMPER GLASS</li>
-          <li className='hover:text-green-500' onClick={PowerBank}>POWER BANK</li>
-          <li className='hover:text-green-500' onClick={Airpods}>AIR PODS</li>
-          <li className='hover:text-green-500'onClick={Printer}>PRINTER</li>
-          <li className='hover:text-green-500' onClick={Pendrive}>PENDRIVE</li>
-          <li className='hover:text-green-500' onClick={Computers}>WEBCAMS</li>
+       {categorie.map((cat,inx)=>(
+          <li key={inx} onClick={()=>setCate(cat.category)}  className='hover:text-green-500'>{cat.category}</li>
+       ))}
+          
         </ul>
       </div>
      

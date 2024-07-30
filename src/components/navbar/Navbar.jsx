@@ -17,7 +17,7 @@ export const Navbar = ({handleScroll,scrollToBlog}) => {
     variables: {
       filter: {
         userId,
-        shopId: 348,
+        shopId: 347,
       },
       
     },
@@ -28,7 +28,7 @@ export const Navbar = ({handleScroll,scrollToBlog}) => {
     variables: {
       filter: {
         userId: userId,
-        shopId: 348,
+        shopId: 347,
       },
     },
   })
@@ -89,7 +89,7 @@ if(cartData){
     <>
     <div className='flex font-bold text-[16px] md:text-xl relative text-gray-600 px-4 items-center py-6 md:py-4 w-full md:px-32 justify-between shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]'>
   <Link to={'/'}>    <div>
-    SRI ELECTRONICS
+    WOOF PET STORE
       </div></Link>
       <div className=''>
         <ul className='hidden md:flex justify-between  gap-10 py-8 '>
@@ -147,7 +147,7 @@ if(cartData){
           </li>
           
           </Link>
-  </ul>
+       </ul>
         </div>}
       </div>
       <div className='flex gap-6 relative'>
@@ -186,7 +186,7 @@ if(cartData){
     </div>
      <div className={`flex fixed top-0 left-0   z-40 py-6 md:py-0  font-bold text-[16px] md:text-xl bg-white text-gray-600 items-center px-4 transition-all duration-1000 w-full md:px-32 justify-between shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] ${showNav?" translate-y-0 h-27 ":"h-0 -translate-y-44  overflow-hidden"}`}>
  <Link to={'/'}>    <div>
-    SRI ELECTRONICS
+    WOOF PET STORE
       </div></Link>
       <div>
         <ul className=' hidden md:flex justify-between  gap-10 py-8 '>

@@ -14,20 +14,25 @@ export const Cart = () => {
     variables: {
       filter: {
         userId: userId,
-        shopId: 348,
+        shopId: 347,
       },
     },
   })
 
   useEffect(()=>{
-    refetch()
+   
     if(data){
+      refetch()
    setCart(data.cart)
     }
   },[data])
+
   useEffect(()=>{
-    refetch()
-      setTotal(cart.reduce((a,b)=>a += b.prize*b.quantity,0).toLocaleString())
+   
+      if(cart){
+        refetch()
+        setTotal(cart.reduce((a,b)=>a += b.prize*b.quantity,0).toLocaleString())
+      }
      
     },[cart])
   if(loading){
@@ -56,7 +61,7 @@ export const Cart = () => {
     </div>
     
      {cart.map(c=>(
-      <CartCard cart={cart} setCart={setCart} refetch=
+      <CartCard  key={c.id} cart={cart} setCart={setCart} refetch=
       {refetch} cartItems={c}/>
      ))}
 

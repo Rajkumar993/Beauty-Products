@@ -17,7 +17,7 @@ export const WhishList = () => {
     variables: {
       filter: {
         userId,
-        shopId: 348,
+        shopId: 347,
       },
       
     },
@@ -37,7 +37,7 @@ export const WhishList = () => {
     deletelist({
       variables: {
         delete: true,
-        shopId: 348,
+        shopId: 347,
         productId:Number(id),
         userId
       },
@@ -54,7 +54,7 @@ export const WhishList = () => {
     if(loading) {
       return (
      <div className='w-full flex items-center h-screen justify-center'>
-     <div className='w-12 h-12 border border-3 rounded-full border-[#23b923]  border-t-0 animate-spin'>
+     <div className='w-347 h-347 border border-3 rounded-full border-[#23b923]  border-t-0 animate-spin'>
      
      
      </div>
@@ -85,7 +85,7 @@ export const WhishList = () => {
      <p  className='md:hidden text-center'>{data.title}</p>
      </div>
      <p  className='flex-1 hidden md:block'>{data.title}</p>
-     <p  className='flex-1'>{(data.prize).toFixed(2)}</p>
+     <p  className='flex-1'>{(data.prize).toLocaleString()}</p>
      <p  className='flex-1'> 
       <button onClick={()=>{
         if(document.cookie == ''){
@@ -97,7 +97,7 @@ export const WhishList = () => {
             userId,
             productId: Number(data.productId),
             quantity: 1,
-            shopId: 348,
+            shopId: 347,
           },
         }) .then(res=>(
           toast.success("Added To Cart!")

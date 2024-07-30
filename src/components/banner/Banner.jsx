@@ -10,7 +10,7 @@ export const Banner = () => {
   const {data,loading,error}=useQuery(SHOP_DETAILS,{
     variables:{
       filter:{
-        shopId:348
+        shopId:347
       }
     }
   })
@@ -28,21 +28,24 @@ export const Banner = () => {
   useEffect(()=>{
     if(data){
      setBanner(data.banners)
-     console.log(banner)
+    
     }
+
   },[data])
 
   return (
-    <Slider {...settings}>
-    {banner.map((b,inx)=>(
-      <div key={inx} className='w-full  h-full   bg-black'>
-                <div className='flex py-20 overflow-hidden justify-center items-center'>
-                <img className="max-w-[250px] max-h-[350px]" src={ `https://s3.ap-south-1.amazonaws.com/business.strackit.com/${b.image}`} alt="" />
+   <div className='mt-4'>
+ {banner.map((b,inx)=>(
+      <div key={inx} className='w-full  h-full   '>
+                <div className=''>
+                <img className="" src={ `https://s3.ap-south-1.amazonaws.com/business.strackit.com/${b.image}`} alt="" />
                 </div>
 
       </div>
     ))}
-    </Slider>
+
+   </div>
+   
     
   )
 }

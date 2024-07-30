@@ -58,5 +58,14 @@ query Query($filter: blogFilter) {
     timestamp
     title
     productName
+    id
   }
 }`
+
+export const GET_CATEGORIES=gql`
+query Categories($filter: shop) {
+  categories(filter: $filter) {
+    category
+  }
+}
+`

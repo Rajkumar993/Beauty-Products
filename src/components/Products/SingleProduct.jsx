@@ -17,7 +17,7 @@ export const SingleProduct = () => {
   const { loading, error, data,refetch } = useQuery(GET_PRODUCTS, {
     variables: {
       filter: {
-        shopId: 348,
+        shopId: 347,
         userId: userId,
       },
     },
@@ -35,7 +35,7 @@ export const SingleProduct = () => {
 
   if(loading) {
     return (
-   <div className='w-full flex items-center h-screen justify-center'>
+   <div className='w-full flex items-center h-screen justify-center '>
    <div className='w-12 h-12 border border-3 rounded-full border-[#23b923]  border-t-0 animate-spin'>
    
    
@@ -46,11 +46,11 @@ export const SingleProduct = () => {
  
 
   return (
-    <div className=' md:py-20 md:px-12 px:4'>
+    <div className=' md:py-20 md:px-12 px-4'>
 {product.map(pro=>(
 <div className='flex flex-col md:flex-row w-full '>
 <div className='w-full md:w-1/2 flex justify-center'>
-     <img className='w-96' src={`https://s3.ap-south-1.amazonaws.com/business.strackit.com/${pro.featureImage}`} alt="" />
+     <img className='w-96 object-cover' src={`https://s3.ap-south-1.amazonaws.com/business.strackit.com/${pro.featureImage}`} alt="" />
     </div>
  <div className='w-full md:w-1/2 flex flex-col gap-3 mt-10 md:mt-0'>
 <div className='w-full flex  md:flex-row flex-col justify-between'>
@@ -74,7 +74,7 @@ export const SingleProduct = () => {
       userId,
       productId: Number(pro.id),
       quantity: 1,
-      shopId: 348,
+      shopId: 347,
     },
   }).then(res=>toast.success('Item Added to Cart')).catch(res=>toast.warning('Item Alredy Exist In Cart'))
 
@@ -89,7 +89,7 @@ export const SingleProduct = () => {
       variables: {
         userId,
         productId: Number(pro.id),
-        shopId: 348,
+        shopId: 347,
         delete: false,
       },
     }).then(res=>toast.success('Item Added to Wishlist')).catch(res=>toast.warning('item alredy exist in wishlist'))
