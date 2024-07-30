@@ -21,7 +21,6 @@ export const Navbar = ({handleScroll,scrollToBlog}) => {
       },
       
     },
-  
   });
  
   const[cart,setCart]=useState([])

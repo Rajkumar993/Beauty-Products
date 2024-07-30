@@ -81,7 +81,7 @@ useEffect(()=>{
 {update && <button className='border w-20 text-center md:w-28 font-bold transition-all duration-500 hover:bg-[#23b923] hover:text-white border-[#23b923] md:px-6 py-2 rounded-full' onClick={()=>handleQuantity()}>update</button>}
   </p>
   <p  className='flex-1'>{((cartItems.prize*quantity).toFixed(2).toLocaleString())}</p>
-  <p  className='md:flex-1 mr-10 md:mr-0 pl-10 text-red-700 text-2xl text-center' onClick={()=>handleDelete()}><MdDelete /></p>
+  <button  className='md:flex-1 mr-10 md:mr-0 pl-10 text-red-700 text-2xl text-center cursor-pointer ' onClick={()=>handleDelete()}><MdDelete  /></button>
 </div>
     </div>  
 

@@ -5,12 +5,9 @@ import { Contact } from './components/contact details/Contact'
 import { Navbar } from './components/navbar/Navbar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Cart } from './components/cart/Cart'
-
 import { SingleProduct } from './components/Products/SingleProduct'
 import { WhishList } from './components/wishList/WhishList'
 import Footer from './components/footer/Footer'
-
-
 function App() {
   const ScrollRef=useRef(null)
 const BlogRef=useRef(null)
