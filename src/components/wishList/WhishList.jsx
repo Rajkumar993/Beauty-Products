@@ -27,13 +27,11 @@ export const WhishList = () => {
   useEffect(()=>{
     refetch()
      if(wishdata){
-      
-      setWishData(wishdata.wishlist.filter(li=>li !=null))
-      
+      setWishData(wishdata.wishlist.filter(li=>li !==null))
      }
   },[wishdata])
+  console.log(wishData)
   const handleDelete=(id)=>{
-
     deletelist({
       variables: {
         delete: true,

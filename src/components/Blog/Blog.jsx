@@ -5,6 +5,7 @@ import { FaRegHeart } from "react-icons/fa";
 import { IoMdChatboxes } from "react-icons/io";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaShareAlt } from "react-icons/fa";
+import { FaLeaf } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 export const Blog = ({BlogRef}) => {
   const[blog,setBlog]=useState([])
@@ -24,7 +25,10 @@ export const Blog = ({BlogRef}) => {
  },[data])
   return (
     <div ref={BlogRef} className='w-full md:px-12'>
-      <p className='text-4xl   text-center border py-2 font-bold  border-[#23b923]'>OUR BLOGS</p>
+      <div className='flex flex-col justify-center gap-1 items-center' >
+      <p className='text-4xl   text-center font-bold  '>OUR BLOGS</p>
+      <p className='text-center text-2xl text-[#23b923] flex items-center'>-----<FaLeaf />-----</p>
+      </div>
  <div className='grid grid-cols-1 md:grid-cols-2   py-10 place-items-center px-12 gap-5 '>
 
        {blog.map(b=>(

@@ -20,7 +20,6 @@ export const Cart = () => {
   })
 
   useEffect(()=>{
-   
     if(data){
       refetch()
    setCart(data.cart)

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { FaShoppingCart } from "react-icons/fa";
 import { FaRegUserCircle } from "react-icons/fa";
 import { useSelector,useDispatch } from 'react-redux';
-import { login } from '../../feature/AuthSlice';
+import { login, logout } from '../../feature/AuthSlice';
 import { IoMenu } from "react-icons/io5";
 import { MdOutlineClose } from "react-icons/md";
 import HOST from '../../env';
@@ -55,8 +55,8 @@ if(cartData){
     window.location.href =
       "https://you.strackit.com/?redirectto="+ HOST;
   }
-  const logOut = async (e) => {
-    await Cookies.remove('ualum');
+  const logOut = (e) => {
+     Cookies.remove('ualum', { path: '/' });
     window.location.href = HOST;
   };
 
