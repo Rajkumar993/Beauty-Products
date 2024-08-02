@@ -109,7 +109,7 @@ if(cartData){
             </Link>
             <Link to={'/'}>   <li onClick={scrollToBlog}>Blog</li></Link>  
      
-            <Link to={`${document.cookie?'/wishlist':'/'}`} onClick={()=>{
+          { document.cookie? <Link to={`${document.cookie?'/wishlist':'/'}`} onClick={()=>{
             if(document.cookie == ''){
               window.alert('Login to Continue');
               return;
@@ -120,7 +120,7 @@ if(cartData){
             <p className='absolute -right-2 text-[11px] text-white text-center w-4 h-4 leading-4 rounded-full bg-red-600 -top-1'>{wish.length}</p>
           </li>
           
-          </Link>
+            </Link>:null}
           
         </ul>
      { ioMenu &&  <div className='absolute z-[2000] md:hidden -bottom-10 left-0  w-full'> 
@@ -135,7 +135,7 @@ if(cartData){
             </Link>
             <Link to={'/'}>   <li onClick={scrollToBlog}>Blog</li></Link>  
   
-            <Link to={`${document.cookie?'/wishlist':'/'}`} onClick={()=>{
+            { document.cookie? <Link to={`${document.cookie?'/wishlist':'/'}`} onClick={()=>{
             if(document.cookie == ''){
               window.alert('Login to Continue');
               return;
@@ -146,19 +146,19 @@ if(cartData){
             <p className='absolute -right-2 text-[11px] text-white text-center w-4 h-4 leading-4 rounded-full bg-red-600 -top-1'>{wish.length}</p>
           </li>
           
-          </Link>
+            </Link>:null}
        </ul>
         </div>}
       </div>
       <div className='flex gap-6 relative'>
-       <Link to={`${document.cookie?'/cart':'/'}`} onClick={()=>{
+    {  document.cookie? <Link to={`${document.cookie?'/cart':'/'}`} onClick={()=>{
          if(document.cookie == ''){
           window.alert('Login to Continue');
           return;
         }
        }}><FaShoppingCart  className='text-2xl'/><p className='absolute right-[85px] md:right-10 text-[11px] text-white text-center w-4 h-4 leading-4 rounded-full bg-red-600 -top-1'>
          {cart.length}
-         </p></Link>
+         </p></Link>:null}
        <FaRegUserCircle  className='text-2xl' onClick={()=>{setShowLogin(!showLogin)}} />
        {showLogin &&<div className='absolute top-7 bg-gray-700 text-white px-5'>
       {authState ? 
@@ -210,16 +210,18 @@ if(cartData){
            
           </li>
           <Link to={'/'}>   <li onClick={scrollToBlog}>Blog</li></Link>  
-          <Link to={`${document.cookie?'/wishlist':'/'}`} onClick={()=>{
+          { document.cookie? <Link to={`${document.cookie?'/wishlist':'/'}`} onClick={()=>{
             if(document.cookie == ''){
               window.alert('Login to Continue');
               return;
             }
-          }}>
+          }} >
           <li className='cursor-pointer relative    whitespace-nowrap' >
             WishList
             <p className='absolute -right-2 text-[11px] text-white text-center w-4 h-4 leading-4 rounded-full bg-red-600 -top-1'>{wish.length}</p>
-          </li></Link>
+          </li>
+          
+            </Link>:null}
         
     
 
@@ -227,12 +229,14 @@ if(cartData){
         </ul>
       </div>
       <div className='flex gap-6 relative'>
-      <Link to={`${document.cookie?'/cart':'/'}`} onClick={()=>{
+      {  document.cookie? <Link to={`${document.cookie?'/cart':'/'}`} onClick={()=>{
          if(document.cookie == ''){
           window.alert('Login to Continue');
           return;
         }
-       }}><FaShoppingCart className='text-2xl' /> <p className='absolute right-10 text-[11px] text-white text-center w-4 h-4 leading-4 rounded-full bg-red-600 -top-1'>{cart.length}</p></Link>
+       }}><FaShoppingCart  className='text-2xl'/><p className='absolute right-[40px] md:right-10 text-[11px] text-white text-center w-4 h-4 leading-4 rounded-full bg-red-600 -top-1'>
+         {cart.length}
+         </p></Link>:null}
        <FaRegUserCircle className='text-2xl' onClick={()=>setShowLogin(!showLogin)} />
        {showLogin &&<div className='absolute top-[56px] bg-gray-700 text-white px-5'>
       {authState ? 
@@ -262,7 +266,7 @@ if(cartData){
   <Link to={'/'}>Home</Link> 
   <Link to={'/'}><p onClick={handleScroll}>Products</p></Link> 
   <Link to={'/'}>   <li onClick={scrollToBlog}>Blog</li></Link>  
-  <Link to={`${document.cookie?'/wishlist':'/'}`} onClick={()=>{
+  { document.cookie? <Link to={`${document.cookie?'/wishlist':'/'}`} onClick={()=>{
             if(document.cookie == ''){
               window.alert('Login to Continue');
               return;
@@ -271,7 +275,9 @@ if(cartData){
           <li className='cursor-pointer relative    whitespace-nowrap' >
             WishList
             <p className='absolute -right-2 text-[11px] text-white text-center w-4 h-4 leading-4 rounded-full bg-red-600 -top-1'>{wish.length}</p>
-          </li></Link>
+          </li>
+          
+            </Link>:null}
   </ul>
         </div>}
     </div>
